@@ -1,0 +1,114 @@
+/* ===== Carousel ===== */
+.carousel-item img {
+  height: 570px !important;
+  /* margin-top: 10px; */
+  object-fit: cover;
+  filter: brightness(0.75); /* thoda dark background */
+}
+
+.carousel-caption {
+  left: 5%;
+  right: auto;
+  bottom: 20%;
+  text-align: left;
+  max-width: 460px;
+}
+
+/* Remove background from caption paragraph */
+.carousel-caption p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  background: none; /* remove blackish background */
+  padding: 0;        /* remove padding */
+  border-radius: 0;  /* remove border-radius */
+  color: #f9f9f9;
+}
+
+.carousel-caption h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}
+
+/* ===== Section Heading ===== */
+.section-heading {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 40px 0 20px;
+  background: linear-gradient(90deg,#1e90ff,#74c0fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s infinite linear;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+/* ===== Top Doctors Grid (fixed 4 per row) ===== */
+#docList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* always 4 cards in a row */
+  gap: 22px;
+  padding: 20px 40px;
+}
+
+#docList .card {
+  border: 2px solid transparent;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background: #fff;
+}
+
+#docList .card:hover {
+  border-color: #1e90ff; /* bluish border on hover */
+  box-shadow: 0 6px 16px rgba(30, 144, 255, 0.25);
+  transform: translateY(-5px);
+}
+
+#docList .card-img-top {
+  height: 250px !important;
+  object-fit: cover;
+}
+
+#docList .card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e90ff;
+  text-align: center;
+}
+
+#docList .card-text {
+  font-size: 0.95rem;
+  color: #444;
+  text-align: center;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+/* Button cleanup */
+#docList .btn {
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+  font-weight: 600;
+  padding: 6px 16px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
+  #docList {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablet */
+  }
+}
+
+@media (max-width: 576px) {
+  #docList {
+    grid-template-columns: 1fr; /* 1 per row on mobile */
+  }
+}

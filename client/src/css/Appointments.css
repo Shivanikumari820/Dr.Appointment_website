@@ -1,0 +1,120 @@
+.appointments-container {
+  display: flex;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  gap: 20px;
+}
+
+.sidebar {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar select,
+.sidebar input[type="range"] {
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.sidebar label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.sidebar button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #1e90ff;
+  color: white;
+  cursor: pointer;
+}
+
+.doctor-list {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.search-bar input {
+  flex-grow: 1;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.search-bar button {
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: none;
+  background: #1e90ff;
+  color: white;
+  cursor: pointer;
+}
+
+.doctor-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.doctor-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.doctor-info {
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.doctor-info h4 { margin: 0; }
+
+.doctor-actions {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.old-fee {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 12px;
+}
+
+.btn-profile {
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid #1e90ff;
+  background: white;
+  color: #1e90ff;
+  cursor: pointer;
+}
+
+.btn-book {
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: none;
+  background: #1e90ff;
+  color: white;
+  cursor: pointer;
+}
+.btn-book:hover {
+  background: #1c86ee;
+}

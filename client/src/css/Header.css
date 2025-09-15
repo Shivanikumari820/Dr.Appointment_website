@@ -1,0 +1,113 @@
+/* Gradient animated background (slightly deeper blues) */
+#header {
+  width: 100%; /* full width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 28px; /* taller than TopMenu */
+  background: linear-gradient(-45deg, #5aa9e6, #74c0fc, #4dabf7, #1e90ff);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  color: white;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo */
+#logo .logoimg {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 10px rgba(100, 149, 237, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#logo .logoimg:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 16px rgba(30, 144, 255, 1);
+}
+
+/* Title */
+.title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  flex: 1;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+/* Right Menu */
+#rightmenu {
+  display: flex;
+  gap: 14px;
+}
+
+#rightmenu .btn-primary {
+  background: #fff;
+  color: #1e90ff;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+#rightmenu .btn-primary:hover {
+  background: #1e90ff;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(30, 144, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  #header {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+  }
+
+  #rightmenu {
+    margin-top: 10px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #logo .logoimg {
+    height: 55px;
+    width: 55px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  #rightmenu {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  #rightmenu .btn-primary {
+    width: 100%;
+  }
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
