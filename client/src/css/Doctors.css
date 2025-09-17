@@ -1,0 +1,169 @@
+/* Page Background */
+.doctors-page {
+  background: 
+    linear-gradient(135deg, rgba(224, 226, 232, 0.9) 0%, rgba(149, 184, 251, 0.9) 100%),
+    url("https://images.rawpixel.com/image_social_portrait/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjg3MC10YW5nLTMyXzEuanBn.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* Title */
+.page-title {
+  font-weight: 800;
+  color: #2a2a72;
+  letter-spacing: -0.5px;
+  font-size: 2.2rem;
+}
+
+@media (max-width: 576px) {
+  .page-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Tabs */
+.search-tabs .nav-link {
+  padding: 12px 22px;
+  font-weight: 600;
+  border-radius: 30px;
+  color: #2a2a72;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.search-tabs .nav-link:hover {
+  background: #eef3ff;
+  border-color: #d0dbff;
+}
+
+.search-tabs .nav-link.active {
+  background: linear-gradient(90deg, #56cfe1, #4361ee);
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+}
+
+/* Search Form */
+.search-form {
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.search-form input,
+.search-form select {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #d6d9f0;
+  font-size: 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-form input:focus,
+.search-form select:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 6px rgba(67, 97, 238, 0.3);
+}
+
+.search-form button {
+  border-radius: 10px;
+  background: linear-gradient(90deg, #56cfe1, #4361ee);
+  border: none;
+  font-weight: 600;
+  padding: 12px 25px;
+  transition: all 0.3s ease;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.search-form button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #4361ee, #56cfe1);
+  box-shadow: 0 6px 15px rgba(67, 97, 238, 0.4);
+}
+
+/* Doctor Cards Grid */
+.doctor-card {
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+}
+
+.doctor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.doctor-img {
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.doctor-card:hover .doctor-img {
+  transform: scale(1.05);
+}
+
+/* Card Body */
+.doctor-card .card-body {
+  padding: 18px;
+}
+
+.doctor-card .card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2a2a72;
+  margin-bottom: 8px;
+}
+
+.doctor-card .card-text {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.doctor-card button {
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 10px;
+  background: linear-gradient(90deg, #56cfe1, #4361ee);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.doctor-card button:hover {
+  background: linear-gradient(90deg, #4361ee, #56cfe1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-form button {
+    width: 100%;
+  }
+
+  .doctor-img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .doctor-img {
+    height: 180px;
+  }
+}
+

@@ -4,6 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyparser = require('body-parser')
 const doctorRoute = require("./routes/doctorRoute");
+const aboutRoutes = require("./routes/aboutRoutes");
 const app = express();
 app.use(cors());
 
@@ -17,6 +18,8 @@ app.use(bodyparser.json())
 
 
 app.use("/doctor", doctorRoute);
+app.use("/about", aboutRoutes);
+
 
 
 
