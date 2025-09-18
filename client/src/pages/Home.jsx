@@ -17,18 +17,20 @@ const Home = () => {
   const [mydata, setMydata] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchDoctors = async () => {
-      try {
-        const res = await axios.get(`${BackEndURL}/doctor/doctorinfo`);
-        setMydata(res.data.doctors); // make sure backend returns { doctors: [...] }
-        console.log(res.data.doctors);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchDoctors();
-  }, []);
+const loadData =async()=>{
+   let api=`${BackEndURL}/doctor/doctorinfo`; 
+    try {
+         const response = await axios.get(api);
+         console.log(response.data);
+         setMydata(response.data);
+     } catch (error) {
+       console.log(error)
+    } 
+}
+
+useEffect(()=>{
+  loadData();
+}, [])
 
   return (
     <>

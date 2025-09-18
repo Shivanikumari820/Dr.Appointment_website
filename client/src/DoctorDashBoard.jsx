@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 
-const DoctroDashBoard =()=>{
+const DoctorDashBoard =()=>{
     return(
         <>
           <h1> Welcome To Doctor DashBoard</h1>
@@ -20,4 +20,4 @@ const DoctroDashBoard =()=>{
         </>
     )
 }
-export default DoctroDashBoard;
+export default DoctorDashBoard;

@@ -9,7 +9,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import GetAppointment from './pages/GetAppointment';
 
-const App = () => {
+const App = () => { 
   return (
     <BrowserRouter>
       <Routes>
@@ -22,12 +22,11 @@ const App = () => {
           <Route path="contactus" element={<Contact />} />
           <Route path="getappointment/:id" element={<GetAppointment />} />
         </Route>
-        <Routes>
+
         {/* Doctor Dashboard */}
-          <Route path="/doctordashboard/:id" element={<DoctorDashBoard />}>
-            <Route path="patientlist" element={<PatientList />} />
-          </Route>
-        </Routes>
+        <Route path="/doctordashboard" element={<DoctorDashBoard />}>
+          <Route path="patientlist" element={<PatientList />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

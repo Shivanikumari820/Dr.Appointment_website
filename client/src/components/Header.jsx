@@ -60,27 +60,28 @@ const Header = () => {
 
   // Doctor Login
   const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post(`${BackEndURL}/doctor/doctorlogin`, {
-        email: email1,
-        password: password1,
-      });
+  e.preventDefault();
+  let api = `${BackEndURL}/doctor/doctorlogin`;
 
-      console.log(res.data);
+  try {
+    const response = await axios.post(api, { email: email1, password: password1 });
+    console.log(response.data);
 
-      // Save doctor info in localStorage
-      localStorage.setItem("docname", response.data.doctorname);
-      localStorage.setItem("docid", response.data._id);
+    // Check kya doctor object exist karta hai
+    const doctorData = response.data.doctor || response.data; 
+    console.log("Logged in doctor:", doctorData);
 
-      setShowLogin(false);
-      toast.success(`Welcome Dr. ${response.data.doctorname}`);
-    navigate("/doctordashboard");// redirect to Doctor dashboard
-    } catch (err) {
-      console.error(err);
-      toast.error("Login failed! Check your credentials.");
-    }
-  };
+    // Correctly set docid in localStorage
+    localStorage.setItem("docid", doctorData.data._id);
+    localStorage.setItem("docname", doctorData.data.doctorname);
+
+    navigate("/doctordashboard");
+  } catch (error) {
+    console.log(error);
+    toast.error("Login failed!");
+  }
+};
+
 
   return (
     <>
