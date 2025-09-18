@@ -7,7 +7,7 @@ const Layout=()=>{
     return(
         <>
 
-       <Container fluid>
+       <Container>
            <Header/>
            <TopMenu/>
            
